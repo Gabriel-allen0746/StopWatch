@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StopWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,7 +17,64 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fce-VT-4FX">
+                                <rect key="frame" x="238" y="387" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="125" id="BWO-g6-i7M"/>
+                                    <constraint firstAttribute="width" constant="125" id="DXh-Ql-NKA"/>
+                                    <constraint firstAttribute="height" constant="125" id="SWI-me-G9m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="STOP">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BWO-g6-i7M"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m61-ne-zeX">
+                                <rect key="frame" x="238" y="87" width="125" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="5VP-Y1-JXN"/>
+                                    <constraint firstAttribute="width" constant="125" id="J7d-KM-PY0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="0.95294117649999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TIME!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1A-yl-3pH">
+                                <rect key="frame" x="153" y="226" width="295.5" height="148"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="C1M-Yh-qwd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="125" id="lzL-1E-f6Q"/>
+                                    <constraint firstAttribute="width" secondItem="G1A-yl-3pH" secondAttribute="height" multiplier="2:1" id="sw9-oj-Gc3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="90"/>
+                                <color key="textColor" red="0.30196078430000001" green="0.62352941179999999" blue="0.01176470588" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.95294117649999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="0.1019607843" green="0.53725490200000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.1019607843" green="0.53725490200000003" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="G1A-yl-3pH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0kY-qv-csp"/>
+                            <constraint firstItem="Fce-VT-4FX" firstAttribute="top" secondItem="m61-ne-zeX" secondAttribute="bottom" constant="25" id="6YP-ck-2WH"/>
+                            <constraint firstItem="m61-ne-zeX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="74x-1u-lVp"/>
+                            <constraint firstItem="G1A-yl-3pH" firstAttribute="top" secondItem="m61-ne-zeX" secondAttribute="bottom" constant="25" id="GuB-Un-Wjs"/>
+                            <constraint firstItem="Fce-VT-4FX" firstAttribute="top" secondItem="G1A-yl-3pH" secondAttribute="bottom" constant="25" id="JYB-8b-LgP"/>
+                            <constraint firstItem="Fce-VT-4FX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hvI-ic-EsB"/>
+                            <constraint firstItem="G1A-yl-3pH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uUl-s9-YjI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6YP-ck-2WH"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
