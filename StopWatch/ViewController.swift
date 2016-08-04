@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var timeLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +24,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func stopTime(sender: AnyObject) {
+        timeLabel.text = "1:00"
+    }
+    
+    @IBAction func startTime(sender: AnyObject) {
+        timeLabel.text = "0:00"
+    }
 
 }
 

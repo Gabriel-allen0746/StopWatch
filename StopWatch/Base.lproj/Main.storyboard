@@ -34,6 +34,9 @@
                                         <exclude reference="BWO-g6-i7M"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="stopTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pf-yf-BB2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m61-ne-zeX">
                                 <rect key="frame" x="238" y="87" width="125" height="125"/>
@@ -45,6 +48,9 @@
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="0.95294117649999999" green="0.0" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7LH-RN-pJL"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TIME!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1A-yl-3pH">
                                 <rect key="frame" x="153" y="226" width="295.5" height="148"/>
@@ -76,6 +82,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="m61-ne-zeX" id="n5j-0P-3gg"/>
+                        <outlet property="stopButton" destination="Fce-VT-4FX" id="3k9-fx-hdr"/>
+                        <outlet property="timeLabel" destination="G1A-yl-3pH" id="mzW-lN-1v0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
